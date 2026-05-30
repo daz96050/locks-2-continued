@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-    <name>Locks 2: Lock Them Out!</name>
-    <author>krkr</author>
+    <name>Locks 2 (Continued): Lock Them Out!</name>
+    <author>daz96050</author>
     <supportedVersions>
         <li>1.2</li>
         <li>1.3</li>
         <li>1.6</li>
     </supportedVersions>
-    <packageId>krkr.locks2</packageId>
+    <packageId>daz96050.locks2</packageId>
     <description>
         Locks mod remade for performance! NOW with apparel filters, game condition filters and many other features!
     </description>
