@@ -1,0 +1,15 @@
+﻿.idea
+# Build outputs
+*/Assemblies/
+
+# IDE
+.vs/
+.idea/
+*.user
+
+# NuGet
+Source/packages/
+Source/Locks2/obj/
+
+# Empty leftover
+Source/Source/
