@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -8,14 +9,18 @@ namespace Locks2.Core
     public partial class LockConfig : IExposable
     {
         private static readonly List<LockConfig> configs = new List<LockConfig>();
+        private static readonly object configsLock = new object();
 
-        private readonly Dictionary<int, Pair<bool, int>> cache = new Dictionary<int, Pair<bool, int>>(100);
+        private readonly ConcurrentDictionary<int, Pair<bool, int>> cache = new ConcurrentDictionary<int, Pair<bool, int>>();
         public Thing door;
         public List<IConfigRule> rules;
 
         public LockConfig()
         {
-            configs.Add(this);
+            lock (configsLock)
+            {
+                configs.Add(this);
+            }
         }
 
         public void ExposeData()
@@ -27,9 +32,12 @@ namespace Locks2.Core
 
         public static void Notify_Dirty()
         {
-            foreach (var config in configs)
+            lock (configsLock)
             {
-                config.cache.Clear();
+                foreach (var config in configs)
+                {
+                    config.cache.Clear();
+                }
             }
             if (Find.CurrentMap == null) return;
 
@@ -57,7 +65,7 @@ namespace Locks2.Core
 
         public void Dirty(Pawn pawn)
         {
-            cache.Remove(pawn.thingIDNumber);
+            cache.TryRemove(pawn.thingIDNumber, out _);
         }
 
         private bool AllowsInternal(Pawn pawn)

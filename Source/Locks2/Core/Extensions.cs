@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Verse;
 
@@ -6,8 +7,8 @@ namespace Locks2.Core
 {
     public static class Extensions
     {
-        private static readonly Dictionary<int, int> _pawnSignature = new Dictionary<int, int>();
-        private static readonly Dictionary<int, LockComp> _cache = new Dictionary<int, LockComp>();
+        private static readonly ConcurrentDictionary<int, int> _pawnSignature = new ConcurrentDictionary<int, int>();
+        private static readonly ConcurrentDictionary<int, LockComp> _cache = new ConcurrentDictionary<int, LockComp>();
 
         public static LockConfig GetConfig(this Building door)
         {
@@ -30,7 +31,8 @@ namespace Locks2.Core
                 comp.config.Initailize();
             }
 
-            return (_cache[door.thingIDNumber] = comp).config;
+            _cache[door.thingIDNumber] = comp;
+            return comp.config;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -50,7 +52,10 @@ namespace Locks2.Core
         {
             int signature;
             if (dirty || !_pawnSignature.TryGetValue(pawn.thingIDNumber, out signature))
-                signature = _pawnSignature[pawn.thingIDNumber] = Rand.Int;
+            {
+                signature = Rand.Int;
+                _pawnSignature[pawn.thingIDNumber] = signature;
+            }
             return signature;
         }
 

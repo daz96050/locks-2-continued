@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using HarmonyLib;
 using Locks2.Core;
@@ -12,7 +13,7 @@ namespace Locks2.Harmony
     public class PathFinder_FindPath_Patch
     {
         private const int MAX_FAILS = 3;
-        private static readonly Dictionary<int, Pair<int, int>> cache = new Dictionary<int, Pair<int, int>>();
+        private static readonly ConcurrentDictionary<int, Pair<int, int>> cache = new ConcurrentDictionary<int, Pair<int, int>>();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static int GetKey(TraverseParms traverseParms, LocalTargetInfo target)
@@ -35,7 +36,7 @@ namespace Locks2.Harmony
             {
                 if (store.first > MAX_FAILS)
                 {
-                    cache.Remove(key);
+                    cache.TryRemove(key, out _);
                     traverseParms.pawn.Map?.reachability?.cache?.ClearFor(traverseParms.pawn);
                     LockConfig.Notify_Dirty();
                 }
