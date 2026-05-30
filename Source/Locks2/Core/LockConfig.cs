@@ -88,6 +88,7 @@ namespace Locks2.Core
             {
                 rules.Add(new ConfigRuleAnimals());
                 rules.Add(new ConfigRuleColonists());
+                rules.Add(new ConfigRuleMechanoids());
                 rules.Add(new ConfigRuleGuests());
                 rules.Add(new ConfigRuleIgnorDrafted());
             }

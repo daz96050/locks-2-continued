@@ -9,6 +9,7 @@
     <ConfigRuleGuests>Guests filter</ConfigRuleGuests>
     <ConfigRuleIgnorDrafted>Drafted pawns filter</ConfigRuleIgnorDrafted>
     <ConfigRuleInverseColonists>Colonist inverted filter</ConfigRuleInverseColonists>
+    <ConfigRuleMechanoids>Mechanoids filter</ConfigRuleMechanoids>
     <ConfigRulePrisoners>Prisoners filter</ConfigRulePrisoners>
     <ConfigRuleRace>Race filter</ConfigRuleRace>
     <ConfigRuleBedRoom>BedRoom filter</ConfigRuleBedRoom>
@@ -27,6 +28,7 @@
     <Locks2DenyIf>Deny if:</Locks2DenyIf>
     <Locks2GuestsFilter>Allow guests and allies</Locks2GuestsFilter>
     <Locks2DraftedPawns>Allow drafted colonists</Locks2DraftedPawns>
+    <Locks2MechanoidsFilter>Allow colony mechanoids</Locks2MechanoidsFilter>
     <Locks2ColonistInvertedFilter>Only allow whitelisted colonists</Locks2ColonistInvertedFilter>
     <Locks2ColonistInvertedFilterWhitelist>whitelisted colonists:</Locks2ColonistInvertedFilterWhitelist>
     <Locks2PrisonersFilter>Allow prisoners</Locks2PrisonersFilter>
