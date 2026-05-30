@@ -51,5 +51,11 @@
     <Locks2AnimalsGenderFilter>Allow only</Locks2AnimalsGenderFilter>
     <Locks2AnimalsGenderMale>Males</Locks2AnimalsGenderMale>
     <Locks2AnimalsGenderFemale>Females</Locks2AnimalsGenderFemale>
-    <Locks2AnimalsAgeFilter>Allow animals under the age of</Locks2AnimalsAgeFilter>    
+    <Locks2AnimalsAgeFilter>Allow animals under the age of</Locks2AnimalsAgeFilter>
+    <ConfigRuleWorkType>Work type filter</ConfigRuleWorkType>
+    <Locks2WorkTypeFilter>Allow pawns with work type</Locks2WorkTypeFilter>
+    <Locks2WorkTypeFilterBody>Required work type:</Locks2WorkTypeFilterBody>
+    <Locks2WorkTypeNone>-- Select work type --</Locks2WorkTypeNone>
+    <Locks2WorkTypeSkillFilter>Require minimum skill level</Locks2WorkTypeSkillFilter>
+    <Locks2WorkTypeMinSkill>Min skill:</Locks2WorkTypeMinSkill>
 </LanguageData>
