@@ -86,7 +86,8 @@ namespace Locks2.Core
             }
             else
             {
-                rules.Add(new ConfigRuleAnimals());
+                var isFenceGate = door?.def?.building?.isFence ?? false;
+                rules.Add(new ConfigRuleAnimals { enabled = !isFenceGate });
                 rules.Add(new ConfigRuleColonists());
                 rules.Add(new ConfigRuleMechanoids());
                 rules.Add(new ConfigRuleGuests());
