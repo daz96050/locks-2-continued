@@ -19,7 +19,12 @@ namespace Locks2.Harmony
                 __result = true;
                 return false;
             }
-            if (!(__instance.Map?.IsPlayerHome ?? false) || p == null || (p.roping?.IsRopedByPawn ?? false)) return true;
+            if (!(__instance.Map?.IsPlayerHome ?? false) || p == null) return true;
+            if (p.roping?.IsRopedByPawn ?? false)
+            {
+                __result = true;
+                return false;
+            }
             var config = Finder.currentConfig = __instance.GetConfig();
             if (config == null) return true;
             if (config.Allows(p))
@@ -54,6 +59,11 @@ namespace Locks2.Harmony
             }
 
             if (!(__instance.Map?.IsPlayerHome ?? false) || p == null) return true;
+            if (p.roping?.IsRopedByPawn ?? false)
+            {
+                __result = true;
+                return false;
+            }
             var config = Finder.currentConfig = __instance.GetConfig();
             if (config == null) return true;
             if (config.Allows(p))
