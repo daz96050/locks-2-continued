@@ -34,7 +34,7 @@
     <Locks2PrisonersFilter>Allow prisoners</Locks2PrisonersFilter>
     <Locks2RaceFilter>Allow pawns by race</Locks2RaceFilter>
     <Locks2RaceFilterWhitelist>Allowed races:</Locks2RaceFilterWhitelist>
-    <Locks2SettingsPerformance>Preformance settings:</Locks2SettingsPerformance>
+    <Locks2SettingsPerformance>Performance settings:</Locks2SettingsPerformance>
     <Locks2SettingsCache>Cache timeout after</Locks2SettingsCache>
     <Locks2SettingsCacheTooltip>Lower values will result in a bigger performance impact but a more responsive locking system. It is recommended leave this at the default value of 1800 ticks</Locks2SettingsCacheTooltip>
     <Locks2SettingsAccessTab>Access tab size and look:</Locks2SettingsAccessTab>

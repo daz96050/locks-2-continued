@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -86,7 +87,9 @@ namespace Locks2.Core
             }
             else
             {
-                var isFenceGate = door?.def?.building?.isFence ?? false;
+                var isFenceGate = (door?.def?.building?.isFence ?? false) 
+                    || (door?.def?.defName?.IndexOf("Gate", StringComparison.OrdinalIgnoreCase) >= 0 
+                        && door is Building_Door);
                 rules.Add(new ConfigRuleAnimals { enabled = !isFenceGate });
                 rules.Add(new ConfigRuleColonists());
                 rules.Add(new ConfigRuleMechanoids());
