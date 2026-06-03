@@ -21,8 +21,10 @@ namespace Locks2.Core
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool Allows(Pawn pawn)
             {
-                if (enabled && whiteSet.Contains(pawn.def) && (pawn.IsColonist || base.Allows(pawn))) return true;
-                return false;
+             // Colonists are always allowed, animals are allowed if they are in the whitelist and belong to the player faction, and other pawns are checked against the whitelist and base rules.
+                return enabled 
+                       && whiteSet.Contains(pawn.def) 
+                       && (pawn.IsColonist || (pawn?.RaceProps?.Animal ?? false) && (pawn.factionInt?.IsPlayer ?? false) || base.Allows(pawn));
             }
 
             public override IConfigRule Duplicate()
@@ -34,7 +36,7 @@ namespace Locks2.Core
                 Action notifySelectionEnded)
             {
                 var before = enabled;
-                if (racesDefs == null) racesDefs = DefDatabase<ThingDef>.AllDefs.Where(def => def.race != null);
+                racesDefs ??= DefDatabase<ThingDef>.AllDefs.Where(def => def.race != null);
                 Text.Font = GameFont.Small;
                 Widgets.CheckboxLabeled(rect.TopPartPixels(25), "Locks2RaceFilter".Translate(), ref enabled);
                 Text.Font = GameFont.Tiny;
@@ -66,18 +68,16 @@ namespace Locks2.Core
                     }
                 }
 
-                if (before != enabled)
-                {
-                    Notify_Dirty();
-                    Find.CurrentMap.reachability.ClearCache();
-                }
+                if (before == enabled) return;
+                Notify_Dirty();
+                Find.CurrentMap.reachability.ClearCache();
             }
 
             public override void ExposeData()
             {
                 base.ExposeData();
                 Scribe_Collections.Look(ref whiteSet, "whiteset", LookMode.Def);
-                if (whiteSet == null) whiteSet = new HashSet<ThingDef>();
+                whiteSet ??= new HashSet<ThingDef>();
             }
 
             private void DoExtraContent(Action<Def> onSelection, IEnumerable<ThingDef> defs,
