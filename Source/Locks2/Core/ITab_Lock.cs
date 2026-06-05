@@ -84,17 +84,20 @@ namespace Locks2.Core
         public override void UpdateSize()
         {
             base.UpdateSize();
-            size = new Vector2(Finder.settings.tabSizeX, Finder.settings.tabSizeY);
+            float scaledScreenHeight = UI.screenHeight / Prefs.UIScale;
+            float scaledScreenWidth = UI.screenWidth / Prefs.UIScale;
+            float maxHeight = scaledScreenHeight - 35f - 165f;
+            size = new Vector2(
+                Mathf.Min(Finder.settings.tabSizeX, scaledScreenWidth * 0.4f),
+                Mathf.Min(Finder.settings.tabSizeY, maxHeight));
             inRect = new Rect(offset, size - offset);
             inRect = inRect.ContractedBy(5);
             if (expanded) size.x *= 2;
             currentRightRect = inRect;
-            if (expanded)
-            {
-                currentRightRect.x += inRect.width;
-                currentRightRect.width = inRect.width;
-                currentRightRect.height = inRect.height;
-            }
+            if (!expanded) return;
+            currentRightRect.x += inRect.width;
+            currentRightRect.width = inRect.width;
+            currentRightRect.height = inRect.height;
         }
 
         public override void FillTab()
@@ -237,16 +240,12 @@ namespace Locks2.Core
 
             if (moveUp)
             {
-                var temp = config.rules[counter];
-                config.rules[counter] = config.rules[counter - 1];
-                config.rules[counter - 1] = temp;
+                (config.rules[counter], config.rules[counter - 1]) = (config.rules[counter - 1], config.rules[counter]);
             }
 
             if (moveDown)
             {
-                var temp = config.rules[counter];
-                config.rules[counter] = config.rules[counter + 1];
-                config.rules[counter + 1] = temp;
+                (config.rules[counter], config.rules[counter + 1]) = (config.rules[counter + 1], config.rules[counter]);
             }
 
             foreach (var rule in removalSet)
