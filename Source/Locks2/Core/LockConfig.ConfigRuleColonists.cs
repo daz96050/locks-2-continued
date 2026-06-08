@@ -21,7 +21,7 @@ namespace Locks2.Core
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool Allows(Pawn pawn)
             {
-                return enabled && pawn.IsColonist && !blackSet.Contains(pawn) && !pawn.IsPrisoner;
+                return enabled && pawn.IsColonist && !blackSet.Contains(pawn) && !pawn.IsPrisoner && !ConfigRuleAutomatons.IsAutomaton(pawn);
             }
 
             public override IConfigRule Duplicate()

@@ -17,7 +17,7 @@ namespace Locks2.Core
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool Allows(Pawn pawn)
             {
-                if (enabled && pawn.Drafted) return true;
+                if (enabled && pawn.Drafted && !ConfigRuleAutomatons.IsAutomaton(pawn)) return true;
                 return false;
             }
 

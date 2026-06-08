@@ -23,7 +23,7 @@ namespace Locks2.Core
             public override bool Allows(Pawn pawn)
             {
                 if (enabled && (pawn?.RaceProps?.Humanlike ?? false) && (pawn.factionInt?.IsPlayer ?? false) &&
-                    whiteSet.Contains(pawn) && !pawn.IsPrisoner) return true;
+                    whiteSet.Contains(pawn) && !pawn.IsPrisoner && !ConfigRuleAutomatons.IsAutomaton(pawn)) return true;
                 return false;
             }
 

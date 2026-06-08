@@ -93,6 +93,8 @@ namespace Locks2.Core
                 rules.Add(new ConfigRuleAnimals { enabled = !isFenceGate });
                 rules.Add(new ConfigRuleColonists());
                 rules.Add(new ConfigRuleMechanoids());
+                if (ModsConfig.IsActive("Neronix17.Asimov"))
+                    rules.Add(new ConfigRuleAutomatons());
                 rules.Add(new ConfigRuleGuests());
                 rules.Add(new ConfigRuleIgnorDrafted());
             }

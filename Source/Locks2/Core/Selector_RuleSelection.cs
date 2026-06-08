@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 using static Locks2.Core.LockConfig;
@@ -20,7 +21,15 @@ namespace Locks2.Core
             : base(integrated, closeAction)
         {
             this.onSelect = onSelect;
-            rulesTypes = typeof(IConfigRule).AllSubclasses().ToArray();
+            rulesTypes = typeof(IConfigRule).AllSubclasses().Where(IsRuleAvailable).ToArray();
+        }
+
+        private static bool IsRuleAvailable(Type type)
+        {
+            var prop = type.GetProperty("IsAvailable", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+            if (prop != null && prop.PropertyType == typeof(bool))
+                return (bool)prop.GetValue(null);
+            return true;
         }
 
         public override void FillContents(Rect inRect)
