@@ -44,7 +44,7 @@ namespace Locks2.Core
                     rect.position += new Vector2(0, 25);
                     rect.size = new Vector2(rect.size.x, 25);
                     Text.Font = GameFont.Tiny;
-                    Widgets.CheckboxLabeled(rect, "Locks2AnimalsGenderFilter".Translate() + " " + allowedGender, ref genderFilterEnabled);
+                    Widgets.CheckboxLabeled(rect, "Locks2AnimalsGenderFilter".Translate() + " " + (allowedGender == Gender.Male ? "Locks2AnimalsGenderMale" : "Locks2AnimalsGenderFemale").Translate(), ref genderFilterEnabled);
 
                     if (genderFilterEnabled)
                     {
