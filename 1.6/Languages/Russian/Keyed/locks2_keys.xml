@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <lockTab>Доступ</lockTab>
+    <locks2Tab>Настройка замка</locks2Tab>
+    <ConfigRuleAnimals>Фильтр животных</ConfigRuleAnimals>
+    <ConfigRuleApparel>Фильтр одежды</ConfigRuleApparel>
+    <ConfigRuleColonists>Фильтр колонистов</ConfigRuleColonists>
+    <ConfigRuleGameCondition>Фильтр игровых условий</ConfigRuleGameCondition>
+    <ConfigRuleGuests>Фильтр гостей</ConfigRuleGuests>
+    <ConfigRuleIgnorDrafted>Фильтр пешек в боевом режиме</ConfigRuleIgnorDrafted>
+    <ConfigRuleInverseColonists>Инвертированный фильтр колонистов</ConfigRuleInverseColonists>
+    <ConfigRuleAutomatons>Фильтр автоматонов</ConfigRuleAutomatons>
+    <ConfigRuleMechanoids>Фильтр механоидов</ConfigRuleMechanoids>
+    <ConfigRulePrisoners>Фильтр заключенных</ConfigRulePrisoners>
+    <ConfigRuleRace>Фильтр рас</ConfigRuleRace>
+    <ConfigRuleBedRoom>Фильтр спальни</ConfigRuleBedRoom>
+    <Locks2DoorSettings>Настройки двери</Locks2DoorSettings>
+    <Locks2Or>- ИЛИ -</Locks2Or>
+    <Locks2Close>Закрыть</Locks2Close>
+    <Locks2OrTooltip>Чтобы пешка могла пройти, должно выполняться хотя бы одно из этих правил</Locks2OrTooltip>
+    <Locks2Animals>Разрешать животных</Locks2Animals>
+    <Locks2ApparelFilter>Разрешать колонистов и гостей в одежде</Locks2ApparelFilter>
+    <Locks2ApparelFilterBody>Пешки должны носить:</Locks2ApparelFilterBody>
+    <Locks2BedRoomFilter>Разрешать только владельцев спальни</Locks2BedRoomFilter>
+    <Locks2BedRoomFilterHint>Пропускает всех, пока в комнате есть незанятые кровати</Locks2BedRoomFilterHint>
+    <Locks2ColonistsFilter>Разрешать всех колонистов, кроме</Locks2ColonistsFilter>
+    <Locks2ColonistsFilterBlacklist>Заблокированные колонисты:</Locks2ColonistsFilterBlacklist>
+    <Locks2GameConditionFilter>Разрешать всех, если игровое условие не активно</Locks2GameConditionFilter>
+    <Locks2DenyIf>Запрещать, если:</Locks2DenyIf>
+    <Locks2GuestsFilter>Разрешать гостей и союзников</Locks2GuestsFilter>
+    <Locks2DraftedPawns>Разрешать колонистов в боевом режиме</Locks2DraftedPawns>
+    <Locks2MechanoidsFilter>Разрешать механоидов колонии</Locks2MechanoidsFilter>
+    <Locks2AutomatonsFilter>Разрешать автоматонов/дроидов колонии (Asimov)</Locks2AutomatonsFilter>
+    <Locks2ColonistInvertedFilter>Пропускать только разрешенных колонистов</Locks2ColonistInvertedFilter>
+    <Locks2ColonistInvertedFilterWhitelist>Разрешенные колонисты:</Locks2ColonistInvertedFilterWhitelist>
+    <Locks2PrisonersFilter>Разрешать заключенных</Locks2PrisonersFilter>
+    <Locks2RaceFilter>Разрешать пешек по расе</Locks2RaceFilter>
+    <Locks2RaceFilterWhitelist>Разрешенные расы:</Locks2RaceFilterWhitelist>
+    <Locks2SettingsPerformance>Настройки производительности:</Locks2SettingsPerformance>
+    <Locks2SettingsCache>Сброс кэша через</Locks2SettingsCache>
+    <Locks2SettingsCacheTooltip>Меньшие значения сильнее нагружают производительность, но делают систему замков более отзывчивой. Рекомендуется оставить значение по умолчанию - 1800 тиков</Locks2SettingsCacheTooltip>
+    <Locks2SettingsAccessTab>Размер и вид вкладки "Доступ":</Locks2SettingsAccessTab>
+    <Locks2SettingsAccessTabX>Размер вкладки "Доступ" по X</Locks2SettingsAccessTabX>
+    <Locks2SettingsAccessTabY>Размер вкладки "Доступ" по Y</Locks2SettingsAccessTabY>
+    <Locks2SettingsDefaults>По умолчанию:</Locks2SettingsDefaults>
+    <Locks2SettingsDefaultsAre>Правила по умолчанию -</Locks2SettingsDefaultsAre>
+    <Locks2SettingsOthers>Прочие настройки:</Locks2SettingsOthers>
+    <Locks2SettingReset>Сброс</Locks2SettingReset>
+    <Locks2SettingsEnableDebugging>Включить отладку</Locks2SettingsEnableDebugging>
+    <Locks2SettingsDebuggingTooltip>Включить отладку для продвинутых пользователей</Locks2SettingsDebuggingTooltip>
+    <Locks2SettingsDebuggingWarning>ВНИМАНИЕ: ТОЛЬКО ДЛЯ МОДДЕРОВ!</Locks2SettingsDebuggingWarning>
+    <Locks2Confirm>Вы уверены?</Locks2Confirm>
+    <Locks2ConfirmYes>Да</Locks2ConfirmYes>
+    <Locks2ConfirmNo>Нет</Locks2ConfirmNo>
+    <Locks2AnimalsGenderFilter>Разрешать только</Locks2AnimalsGenderFilter>
+    <Locks2AnimalsGenderMale>Самцов</Locks2AnimalsGenderMale>
+    <Locks2AnimalsGenderFemale>Самок</Locks2AnimalsGenderFemale>
+    <Locks2AnimalsAgeFilter>Разрешать животных младше</Locks2AnimalsAgeFilter>
+    <ConfigRuleWorkType>Фильтр типа работы</ConfigRuleWorkType>
+    <Locks2WorkTypeFilter>Разрешать пешек с типом работы</Locks2WorkTypeFilter>
+    <Locks2WorkTypeFilterBody>Требуемый тип работы:</Locks2WorkTypeFilterBody>
+    <Locks2WorkTypeNone>-- Выберите тип работы --</Locks2WorkTypeNone>
+    <Locks2WorkTypeSkillFilter>Требовать минимальный уровень навыка</Locks2WorkTypeSkillFilter>
+    <Locks2WorkTypeMinSkill>Мин. навык:</Locks2WorkTypeMinSkill>
+    <!-- Door selection gizmos -->
+    <Locks2GizmoCopy>Копировать</Locks2GizmoCopy>
+    <Locks2GizmoCopyDesc>Скопировать текущую настройку замка</Locks2GizmoCopyDesc>
+    <Locks2GizmoPaste>Вставить</Locks2GizmoPaste>
+    <Locks2GizmoPasteDesc>Вставить настройку замка</Locks2GizmoPasteDesc>
+</LanguageData>
