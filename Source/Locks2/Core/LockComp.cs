@@ -38,8 +38,8 @@ namespace Locks2.Core
                 {
                     yield return new Command_Action
                     {
-                        defaultLabel = "copy",
-                        defaultDesc = "Copy current lock configuration",
+                        defaultLabel = "Locks2GizmoCopy".Translate(),
+                        defaultDesc = "Locks2GizmoCopyDesc".Translate(),
                         activateSound = SoundDefOf.Designate_Claim,
                         icon = TexButton.Copy,
                         action = () =>
@@ -55,8 +55,8 @@ namespace Locks2.Core
                 {
                     yield return new Command_Action
                     {
-                        defaultLabel = "Paste",
-                        defaultDesc = "Paste lock configuration",
+                        defaultLabel = "Locks2GizmoPaste".Translate(),
+                        defaultDesc = "Locks2GizmoPasteDesc".Translate(),
                         activateSound = SoundDefOf.Designate_Claim,
                         icon = TexButton.Paste,
                         action = () =>
