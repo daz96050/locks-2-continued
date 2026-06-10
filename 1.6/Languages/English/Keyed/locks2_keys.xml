@@ -62,4 +62,8 @@
     <Locks2WorkTypeNone>-- Select work type --</Locks2WorkTypeNone>
     <Locks2WorkTypeSkillFilter>Require minimum skill level</Locks2WorkTypeSkillFilter>
     <Locks2WorkTypeMinSkill>Min skill:</Locks2WorkTypeMinSkill>
+    <Locks2GizmoCopy>Copy</Locks2GizmoCopy>
+    <Locks2GizmoCopyDesc>Copy current lock configuration</Locks2GizmoCopyDesc>
+    <Locks2GizmoPaste>Paste</Locks2GizmoPaste>
+    <Locks2GizmoPasteDesc>Paste lock configuration</Locks2GizmoPasteDesc>
 </LanguageData>
